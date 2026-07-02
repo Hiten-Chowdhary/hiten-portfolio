@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #09090b; /* zinc-950 */
+  color: #f4f4f5; /* zinc-100 */
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 9999px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Small, named hover/animation utilities used across components — kept as
+   plain CSS rather than Tailwind arbitrary-value classes for portability. */
+.hover-scale-103:hover {
+  transform: scale(1.03);
+}
+
+.hover-scale-102:hover {
+  transform: scale(1.02);
+}
+
+.card-hover-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(251, 146, 60, 0.1),
+    0 20px 40px -20px rgba(251, 146, 60, 0.25);
+}
+
+.group:hover .preview-zoom-103 {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
